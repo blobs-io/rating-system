@@ -1,30 +1,37 @@
 #include <iostream>
-#include <vector>
 #include <cmath>
+#include <string>
 
-unsigned int get_median(std::vector<int> points){
-	int sum = 0;
-	for(auto &val : points) sum += val;
-	return sum / (points.size());
+
+unsigned int fight(unsigned int own_br, unsigned int br_of_opponent, bool won){
+    int gainValue = 0;
+    int br_difference = own_br - br_of_opponent; // positive if own_br > br_of_opponent   | -98999
+    if(won){
+        if(br_difference < 0){
+            gainValue = pow(log10(-br_difference), 4);
+        } else {
+            gainValue = pow(log10(-br_difference), 4);
+        }
+    }
+    
+    return gainValue;
 }
 
 int main(){
-	std::vector<int> points = {
-		1000,
-		2000,
-		6000,
-		4000
-	};
-	
-	unsigned int own_points = 10000;
-	unsigned int median = get_median(points); // 3250 in this example
-	srand(median);
-	int diff = median - own_points; // -6750 in this example
-	
-	
-	if(own_points > median){
-		std::cout << -log(-diff * 1e10);
-	} else {
-		std::cout << log(diff * 1e10);
-	}
+    unsigned int own_br;
+    unsigned int br_of_opponent;
+    bool won;
+    std::string input;
+    std::cout << "Own BR: ";
+    std::cin >> own_br;
+    std::cout << "BR of opponent: ";
+    std::cin >> br_of_opponent;
+    std::cout << "Won? (y/n)";
+    std::cin >> input;
+    won = input == "y";
+    
+    std::cout << fight(own_br, br_of_opponent, won);
+
+    int a;
+    std::cin >> a;
 }
