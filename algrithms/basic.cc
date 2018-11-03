@@ -37,15 +37,11 @@ int fight(unsigned int own_br, unsigned int br_of_opponent, bool won)
 	return gainValue == 0 ? ++gainValue : gainValue;
 }
 
-int main(int argc, char* argv)
+int main(int argc, char* argv[])
 {
-	while (1)
-	{
-		unsigned int own_br = stoi(argv[1]);
-		unsigned int br_of_opponent = stoi(argv[2]);
-		bool won = static_cast<int>(argv[3]);
-		std::cout << fight(own_br, br_of_opponent, won) << "\n\n";
-	}
-	int a;
-	std::cin >> a;
+	unsigned int own_br = atoi(argv[1]);
+	unsigned int br_of_opponent = atoi(argv[2]);
+	bool won = atoi(argv[3]);
+	std::cout << fight(own_br, br_of_opponent, won);
+	return 0;
 }
