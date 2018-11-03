@@ -1,0 +1,6 @@
+This is the official repository for the browser-game Blobs.io
+You may not find the game under that domain as we haven't bought it yet and it is still a WIP.
+
+What is this needed for?
+You need this collection of source files to host Blobs.io as I find C++ more suitable for calculations than JavaScript. 
+Every time a User noms another one it executes the compiled file basic.cc which returns the amount of BR the winner gained.
