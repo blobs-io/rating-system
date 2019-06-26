@@ -1,0 +1,2 @@
+language: cpp
+script: g++ main.cc -std=c++14
