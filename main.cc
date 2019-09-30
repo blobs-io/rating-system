@@ -28,7 +28,7 @@ int main(int argc, char **argv)
     // Options
     // m = own BR
     // o = opponent BR
-    optparse::parser parser(argc, argv, "mo");
+    optparse::parser parser(argc, argv, "mov");
 	optparse::option* opts = parser.get_options();
 
 	int own_br,
@@ -42,6 +42,9 @@ int main(int argc, char **argv)
 	            own_br = std::stoi(opts[i].value);
 	        } else if (opts[i].name == 'o') {
 	            opponent_br = std::stoi(opts[i].value);
+	        } else if (opts[i].name == 'v') {
+                std::cout << "blobs.io rating system v1.0.0\n";
+                exit(0);
 	        }
 	    } catch(...) {
 	        std::cerr << "Invalid BR value\n";
