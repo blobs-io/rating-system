@@ -2,15 +2,20 @@ This is the official repository for the browser-game Blobs.io
 You may not find the game under that domain as we haven't bought it yet and it is still a WIP.
 
 What is this needed for?
-You need this collection of source files to host blobs.io as I find C++ more suitable for calculations than JavaScript. 
+You need this collection of source files to host blobs.io as I find C++ more suitable for calculations than JavaScript.
+
+Note: Version 1.0.0 and higher will require you to link the optparse library, which can be found at https://github.com/y21/optparse
+If you are on linux, you can use the deps.sh file to download the library:
+$ chmod 777 deps.sh
+$ ./deps.sh
 
 ========================
 Set-up and example usage
 ========================
 $ git clone https://github.com/blobs-io/rating-system.git
 $ cd rating-system
-$ g++ main.cc -o m -std=c++14
-$ ./m 1000 9999 --br
-335
-$ ./m --version
-blobs.io rating-system version 0.0.2
+$ g++ -Iinclude main.cc -o m -std=c++14
+$ ./m -m 1000 -o 9999
+244
+$ ./m -v
+blobs.io rating-system v1.0.0
