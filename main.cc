@@ -28,6 +28,7 @@ int main(int argc, char **argv)
     // Options
     // m = own BR
     // o = opponent BR
+    // v = version
     optparse::parser parser(argc, argv, "mov");
 	optparse::option* opts = parser.get_options();
 
