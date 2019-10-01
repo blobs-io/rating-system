@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <fstream>
 #include <optparse/parser.hpp>
 #include <cmath>
 
@@ -29,7 +30,8 @@ int main(int argc, char **argv)
     // m = own BR
     // o = opponent BR
     // v = version
-    optparse::parser parser(argc, argv, "mov");
+    // h = display readme
+    optparse::parser parser(argc, argv, "movh");
 	optparse::option* opts = parser.get_options();
 
 	int own_br,
@@ -46,9 +48,17 @@ int main(int argc, char **argv)
 	        } else if (opts[i].name == 'v') {
                 std::cout << "blobs.io rating system v1.0.0\n";
                 exit(0);
-	        }
-	    } catch(...) {
-	        std::cerr << "Invalid BR value\n";
+	        } else if (opts[i].name == 'h') {
+                std::ifstream fd("./README");
+                std::string temp;
+                std::cout << "blobs.io help page\n";
+                while(getline(fd, temp)) {
+                    std::cout << temp << "\n";
+                }
+                exit(0);
+            }
+	    } catch(std::invalid_argument) {
+	        std::cerr << "Parameter is not a valid number\n";
 	    }
 	}
 
@@ -56,4 +66,3 @@ int main(int argc, char **argv)
 
 	return 0;
 }
-
