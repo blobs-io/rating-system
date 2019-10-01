@@ -15,7 +15,13 @@ Set-up and example usage
 $ git clone https://github.com/blobs-io/rating-system.git
 $ cd rating-system
 $ g++ -Iinclude main.cc -o m -std=c++14
-$ ./m -m 1000 -o 9999
-244
 $ ./m -v
 blobs.io rating-system v1.0.0
+
+========================
+Options
+========================
+    -m      Own BR value
+    -o      Opponent BR value
+    -h      Shows this README
+    -v      Displays the current version
