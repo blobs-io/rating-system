@@ -35,8 +35,7 @@ int main(int argc, char ** argv) {
     int own_br,
     opponent_br;
 
-    for (int i = 0; opts.size(); ++i) {
-
+    for (int i = 0; i < opts.size(); ++i) {
         try {
             if (opts[i].name == "m") {
                 own_br = std::stoi(opts[i].value);
