@@ -1,3 +1,4 @@
+#include <cmath>
 short calc(unsigned int own_br, unsigned int br_of_opponent) {
     int gainValue = 0;
     int br_difference = own_br - br_of_opponent;
