@@ -1,12 +1,9 @@
 #include <iostream>
-
 #include <string>
-
 #include <fstream>
-
 #include <optparse/parser.hpp>
-
 #include <cmath>
+#include "algorithm.cc"
 
 int main(int argc, char ** argv) {
     // Options
